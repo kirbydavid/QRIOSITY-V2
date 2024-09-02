@@ -1,0 +1,290 @@
+/* Root Variables */
+:root {
+    --contrast: #ffffff;
+    --theme: #1D1D20;
+    --lightTheme:#a8a8a8;
+    --gradient: linear-gradient(90deg, rgba(163, 127, 252, 1) 0%, rgba(252, 127, 171, 1) 100%);
+    --whiteHover: #e4e4e4;
+    --gradientBorder: linear-gradient(to right, rgba(163, 127, 252, 1) 0%, rgba(252, 127, 171, 1) 100%);
+    --mainSize: 20px;
+    --smallSize:15px;
+
+}
+
+/* Global Styles */
+* {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Typography */
+.styled {
+    font-family: "Merriweather", system-ui;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* Button Styles */
+button {
+    border-radius: 4px !important;
+}
+
+/* Section Styles */
+section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+#topBarHeader {
+    position: fixed;
+    background-color: var(--theme);
+    width: 100%;
+    z-index: 1055;
+}
+
+.header {
+    background: var(--gradient);
+    display: flex;
+    justify-content: space-between;
+    top: 5px;
+    padding: 10px 30px;
+    height: 10vh;
+    background-clip: text;
+    font-weight: 200;
+}
+.modal {
+    z-index: 1054; /* Default Bootstrap modal z-index */
+}
+#TopbarNav {
+    display: flex;
+    flex-direction: row;
+}
+
+#tagline {
+    display: inline;
+}
+
+#navHeader {
+    display: flex;
+    gap: 10px;
+}
+
+/* Navigation Links */
+.header .nav-link {
+    color: var(--contrast);
+    text-decoration: none;
+    padding: 7px;
+    transition: color 0.3s ease;
+    font-size: var(--mainSize);
+    
+}
+
+.header .nav-link:hover {
+    color: transparent;
+}
+
+/* Hover Button Styles */
+.hoverButton {
+    background-color: transparent;
+    color: var(--contrast);
+    border-color: var(--contrast);
+    font-size: var(--mainSize);
+    font-weight: 400;
+}
+
+.hoverButton:hover {
+    color: var(--theme);
+    background-color: var(--contrast);
+}
+
+.hoverButton:active,
+.hoverButton.show {
+    color: var(--theme);
+    background-color: var(--contrast);
+}
+
+/* Dropdown Styles */
+.dropdown-menu {
+    background-color: var(--contrast);
+    margin: 10px;
+}
+
+.dropdown-item {
+    padding: 15px 20px;
+}
+
+/* Other Component Styles */
+#front {
+    background-color: var(--theme);
+}
+
+#gradientText {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Form Modal Styles */
+.formModal {
+    top: 10%;
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+#signInTitle {
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    color: var(--theme);
+}
+
+small {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Social Icons Styles */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 50%;
+    color: var(--theme);
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: var(--mainSize);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: var(--whiteHover);
+}
+
+/* Positioning Utilities */
+.position-relative {
+    position: relative;
+}
+
+/* Toggle Password Styles */
+.toggle-password {
+    position: absolute;
+    right: 30px;
+    transform: translateY(-175%);
+    cursor: pointer;
+    font-size: var(--smallSize);
+    color: var(--theme);
+}
+
+/* Sign In Button Styles */
+#signIn {
+    /* Add styles if necessary */
+}
+
+#signInSwitch {
+    color: var(--contrast);
+    background-color: var(--theme);
+    border-color: transparent;
+    text-align: center;
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Alternative Form (LOGIN/SIGNUP) Styles */
+.alternative {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+
+/* Dashboard */
+
+#dashboardModalBox{
+    margin-top: 10vh;
+    height: 90vh;
+    
+}
+#dashboard_Content{
+    height: 100%;
+    width: 100%;
+    background-color: #F2F3F5;
+    display: flex;
+}
+
+#dashboard_SideBar{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: #ffffff;
+    width: 20%;
+    height: 100%;
+}
+#dashboard_SideBar button{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    border-color: transparent;
+    background-color: var(--contrast);
+    color: var(--lightTheme);
+    padding: 5% 10%;
+    font-weight: 400;
+    gap: 30px;
+    font-size: var(--smallSize);
+}
+#dashboard_SideBar button:hover{
+    background-color: #F2F3F5;
+    color:var(--theme);
+    border-right: var(--theme) 3px solid;
+}
+.dashboard_Divider{
+    margin-top: 10vh;
+    color: var(--theme);
+    font-weight: bolder;
+    padding: 0 10%;
+    font-size: var(--mainSize);
+    
+}
+
+#dashboard_MainContent{
+    margin-left: 5vh;
+    height: 100%;
+    width:100%;
+    background-color: var(--contrast);
+    padding: 20px 20px;
+}
+/* Responsive Styles */
+@media (max-width: 576px) {
+    #tagline {
+        display: none;
+    }
+}
