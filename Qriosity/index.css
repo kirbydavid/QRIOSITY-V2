@@ -20,10 +20,13 @@
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
-
+h5{
+    margin-bottom: -0.2rem;
+}
 /* Typography */
 .styled {
     font-family: "Merriweather", system-ui;
@@ -165,7 +168,7 @@ section {
 }
 
 .modal-content {
-    padding: 20px;
+  
 }
 
 #signInTitle {
@@ -255,6 +258,7 @@ section {
     
 }
 #dashboard_Content{
+   
     height: 100%;
     width: 100%;
     background-color: #F2F3F5;
@@ -268,6 +272,7 @@ section {
     background-color: #ffffff;
     width: 20%;
     height: 100%;
+    border-right: var(--whiteHover) solid 1px;
 }
 #dashboard_SideBar button{
     display: flex;
@@ -344,7 +349,7 @@ section {
 }
 
 .itemTemplate{
-    border-radius: 4px;
+    border-radius: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -352,8 +357,10 @@ section {
     height: auto;
     padding: 25px 25px;
     border: var(--whiteHover) solid 1px;
-    
+    margin-bottom: 10px;
+
 }
+
 
 .itemTemplate_left, .itemTemplate_right{
     display: flex;
@@ -366,10 +373,7 @@ section {
 
 }
 
-.itemTemplate_left a{
 
-
-}
 
 /* ITEMS TAB */
 
@@ -377,8 +381,30 @@ section {
 
 
 /* Responsive Styles */
-@media (max-width: 576px) {
+
+
+@media (min-width: 768px) and (max-width: 992px) {
     #tagline {
         display: none;
+    }
+
+    .dashboard_SideBar_but{
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+    #dashboard_SideBar button{
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .header {
+        padding: 10px 25px;
+    }
+    #dashboard_SideBar {
+        width: 25%;
+    }
+    #dashboard_MainContent {
+        width: 75%;
     }
 }
