@@ -1,4 +1,4 @@
-// Define the USDA fetch function
+// usda fetch
 function fetchUSDAData(query) {
    return fetch(`https://api.nal.usda.gov/fdc/v1/foods/search?query=${query}&api_key=fEFUuaodX1TRMM5G8nl59Knfkul2CTZhztMMsCNu`, {
      method: 'GET',
@@ -14,7 +14,7 @@ function fetchUSDAData(query) {
    });
  }
  
- // Define the Nutritionix fetch function
+ // nutritionix fetch
  function fetchNutritionixData(query) {
    return fetch('https://trackapi.nutritionix.com/v2/natural/nutrients', {
      method: 'POST',
@@ -35,7 +35,7 @@ function fetchUSDAData(query) {
    });
  }
  
- // Define % Daily value
+ // daily values
  const dailyValues = {
    totalFat: 78,
    saturatedFat: 20,
@@ -52,19 +52,19 @@ function fetchUSDAData(query) {
    vitaminD: 20
  };
  
- // Define the query variable
+ // item 
  const query = "adobo ";
  
- // Use Promise.all() to wait for both fetches to complete
+ // wait for both to complete fetching
  Promise.all([fetchUSDAData(query), fetchNutritionixData(query)])
    .then(([usdaData, nutritionixData]) => {
-     // Log the full USDA response to check for nutrient data
+     // logs to
      console.log('USDA Data:', usdaData);
      console.log('Nutritionix Data:', nutritionixData);
  
-     // Process the USDA data
-     const foodData = usdaData.foods[0]; // Assuming we're using the first food item
-     const foodNutrients = foodData.foodNutrients; // Get the foodNutrients array
+     // extract ng usda
+     const foodData = usdaData.foods[0]; 
+     const foodNutrients = foodData.foodNutrients; 
  
      // Debugging output: Log all nutrients to find the exact name
      console.log('All nutrients:', foodNutrients);
@@ -83,7 +83,7 @@ function fetchUSDAData(query) {
      const vitaminD = getNutrientValue(foodNutrients, 'Vitamin D (D2 + D3), International Units');
      const calcium = getNutrientValue(foodNutrients, 'Calcium, Ca');
      const iron = getNutrientValue(foodNutrients, 'Iron, Fe');
-     const potassium = getNutrientValue(foodNutrients, 'Potassium, K'); // Adjust if needed
+     const potassium = getNutrientValue(foodNutrients, 'Potassium, K'); 
      const protein = getNutrientValue(foodNutrients, 'Protein');
  
      // Debugging output
@@ -128,7 +128,7 @@ function fetchUSDAData(query) {
      console.error('There has been a problem with your fetch operation:', error);
    });
  
- // Function to get the nutrient value from the foodNutrients array
+ // gets the nutrient value from the array
  function getNutrientValue(foodNutrients, nutrientName) {
    const nutrient = foodNutrients.find(n => n.nutrientName === nutrientName);
    return {
@@ -137,7 +137,7 @@ function fetchUSDAData(query) {
    };
  }
  
- // Function to calculate and update daily value percentage
+ // function to calc daily value
  function updateDailyValue(elementId, nutrientValue, nutrientName) {
    const element = document.getElementById(elementId);
    const percentageElement = element ? element.nextElementSibling : null;
@@ -159,7 +159,7 @@ function fetchUSDAData(query) {
    return '0%';
  }
  
- // Helper function to format nutrient display
+ // formatter
  function formatNutrient(nutrient) {
    return nutrient.value + ' ' + nutrient.unit;
  }
