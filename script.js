@@ -53,7 +53,7 @@ function fetchUSDAData(query) {
  };
  
  // item 
- const query = "adobo ";
+ const query = "Carrots, raw";
  
  // wait for both to complete fetching
  Promise.all([fetchUSDAData(query), fetchNutritionixData(query)])
@@ -78,8 +78,8 @@ function fetchUSDAData(query) {
      const totalCarbohydrates = getNutrientValue(foodNutrients, 'Carbohydrate, by difference');
      const dietaryFiber = getNutrientValue(foodNutrients, 'Fiber, total dietary');
      const sugars = getNutrientValue(foodNutrients, 'Total Sugars');
-     const vitaminA = getNutrientValue(foodNutrients, 'Vitamin A (IU)');
-     const vitaminC = getNutrientValue(foodNutrients, 'Vitamin C');
+     const vitaminA = getNutrientValue(foodNutrients, 'Vitamin A, IU');
+     const vitaminC = getNutrientValue(foodNutrients, 'Vitamin C, total ascorbic acid');
      const vitaminD = getNutrientValue(foodNutrients, 'Vitamin D (D2 + D3), International Units');
      const calcium = getNutrientValue(foodNutrients, 'Calcium, Ca');
      const iron = getNutrientValue(foodNutrients, 'Iron, Fe');
