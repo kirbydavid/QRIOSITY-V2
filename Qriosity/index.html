@@ -37,7 +37,7 @@
         <div id="TopbarNav">
           <a class="nav-link" href="#front">
             <strong class="styled">QRIOSITY</strong>
-            <p id="tagline">| A Fitness WebApp</p>
+            <p id="tagline">| A Smart Packaging WebApp</p>
           </a>
         </div>
 
@@ -159,7 +159,7 @@
                 </button>
               </div>
 
-              <small> or continue with</small>
+              <small class="centerSmall"> or continue with</small>
 
               <div class="social-icons">
                 <a href="#"><i class="fa-brands fa-facebook"></i></a>
@@ -168,7 +168,7 @@
               </div>
 
               <div class="alternative">
-                <small>
+                <small class="centerSmall">
                   Not a member?
                   <button
                     type="button"
@@ -307,6 +307,7 @@
         <div class="modal-content">
           <div id="dashboard_Content">
             <div id="dashboard_SideBar">
+              <!-- SIDE BARS -->
               <p class="dashboard_Divider">Dashboard</p>
               <button><i class="fa-solid fa-list"></i>Summary</button>
               <button><i class="fa-solid fa-paper-plane"></i>Items</button>
@@ -316,12 +317,115 @@
               <p class="dashboard_Divider">Support</p>
               <button><i class="fa-solid fa-gear"></i>Settings</button>
               <button><i class="fa-solid fa-circle-question"></i>Help</button>
+              <!-- SIDE BARS -->
             </div>
 
             <div id="dashboard_MainContent">
+              <!-- ITEM TABS -->
+
               <div id="dashboard_Items">
-                <div id="dashboard_Items_Header"></div>
+                <div id="dashboard_Items_Header">
+                  <div id="db_item">
+                    <h5>0 Current Items</h5>
+                  </div>
+                  <div id="dashboard_Items_Categories">
+                    <div id="dashboard_Items_Categories_List">
+                      <button class="btn db_categ_but">Category 1</button>
+                      <button class="btn db_categ_but">Category 2</button>
+                      <button class="btn db_categ_but">Category 3</button>
+                    </div>
+                    <button
+                      id="dashboard_Items_Categories_Create"
+                      class="btn btn-light"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+
+                <div id="dashboard_Items_List">
+                  <table class="table" id="ingredientsTable">
+                    <tbody id="ingredientsList">
+                      <tr>
+                        <div class="itemTemplate">
+                          <div class="itemTemplate_left">
+                            <button class="iconButton">
+                              <i class="fa-solid fa-qrcode iconButton"></i>
+                            </button>
+
+                            <p class="dashboard_Items_itemTitle">
+                              Pancit canton
+                              <br />
+                              <small class="dashboard_Items_Data date"
+                                >9/2/2024</small
+                              >
+                            </p>
+                          </div>
+
+                          <div class="itemTemplate_right">
+                            <div>
+                              <small class="light"> Serving </small>
+                              <br />
+
+                              <p class="highlight">1 serving</p>
+                            </div>
+
+                            <div>
+                              <small class="light"> Calories </small>
+                              <br />
+
+                              <p class="highlight">1000 Calories</p>
+                            </div>
+
+                            <div>
+                              <small class="light"> Weight </small>
+                              <br />
+
+                              <p class="highlight">50g</p>
+                            </div>
+                            <div>
+                              <small class="light"> Food Group </small>
+                              <br />
+
+                              <p class="highlight">Fruits</p>
+                            </div>
+
+                            <button
+                              class="iconButton"
+                              type="button"
+                              class="btn"
+                              id="profileDropdown"
+                              data-bs-toggle="dropdown"
+                              aria-haspopup="true"
+                              aria-expanded="false"
+                            >
+                              <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+
+                            <div class="dropdown-menu">
+                              <button
+                                class="btn btn-light dropdown-item"
+                                type="button"
+                              >
+                                <i class="fa-solid fa-pen-to-square"></i> | Edit
+                              </button>
+                              <button
+                                class="btn btn-light dropdown-item"
+                                type="button"
+                              >
+                                <i class="fa-solid fa-trash"></i> | Delete
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </tr>
+                      <tr></tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
+
+              <!-- ITEM TABS -->
             </div>
           </div>
         </div>

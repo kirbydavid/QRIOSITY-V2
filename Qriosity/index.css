@@ -32,6 +32,27 @@ html {
     font-weight: bold;
 }
 
+.light{
+    color: var(--lightTheme);
+}
+
+.highlight{
+    color: var(--theme);
+}
+
+.iconButton{
+    border: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    border-radius: 4px;
+}
+.iconButton:hover{
+    background-color: var(--whiteHover);
+}
 /* Button Styles */
 button {
     border-radius: 4px !important;
@@ -154,7 +175,7 @@ section {
     color: var(--theme);
 }
 
-small {
+.centerSmall {
     margin: 10px;
     display: flex;
     justify-content: center;
@@ -274,14 +295,87 @@ small {
     font-size: var(--mainSize);
     
 }
-
+/* MAIN CONTENT */
 #dashboard_MainContent{
-    margin-left: 5vh;
+
     height: 100%;
     width:100%;
-    background-color: var(--contrast);
     padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
 }
+
+/* ITEMS TAB */
+
+#dashboard_Items_Header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#db_item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#dashboard_Items_Categories{
+    display: flex;
+    flex-direction: row;
+
+}
+#dashboard_Items_Categories_List{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    
+}
+
+.db_categ_but{
+    display: flex;
+    flex-direction: row;
+}
+.db_categ_but:hover{
+    background-color: transparent;
+    border: t;
+    border-bottom: var(--theme) 2px solid;
+    border-radius: 0px !important;
+}
+
+.itemTemplate{
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--contrast);
+    height: auto;
+    padding: 25px 25px;
+    border: var(--whiteHover) solid 1px;
+    
+}
+
+.itemTemplate_left, .itemTemplate_right{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 50px;
+    /* background-color: #999999; */
+
+}
+
+.itemTemplate_left a{
+
+
+}
+
+/* ITEMS TAB */
+
+/* MAIN CONTENT */
+
+
 /* Responsive Styles */
 @media (max-width: 576px) {
     #tagline {
