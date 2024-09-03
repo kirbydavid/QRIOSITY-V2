@@ -168,7 +168,7 @@ section {
 }
 
 .modal-content {
-    padding: 20px;
+  
 }
 
 #signInTitle {
@@ -349,7 +349,7 @@ section {
 }
 
 .itemTemplate{
-    border-radius: 4px;
+    border-radius: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
