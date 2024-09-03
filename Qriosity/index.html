@@ -44,7 +44,7 @@
         <!-- Navigation -->
         <nav id="navHeader">
           <a class="nav-link" href="#about">About</a>
-          <button
+          <!-- <button
             type="button"
             class="btn btn-light ms-3 hoverButton"
             data-bs-toggle="modal"
@@ -52,7 +52,7 @@
             id="signInButton"
           >
             Sign In
-          </button>
+          </button> -->
           <div class="dropdown">
             <button
               type="button"
@@ -306,23 +306,37 @@
       <div class="modal-dialog modal-fullscreen" id="dashboardModalBox">
         <div class="modal-content">
           <div id="dashboard_Content">
+            <!-- Sidebar -->
             <div id="dashboard_SideBar">
               <!-- SIDE BARS -->
               <p class="dashboard_Divider">Dashboard</p>
-              <button><i class="fa-solid fa-list"></i>Summary</button>
-              <button><i class="fa-solid fa-paper-plane"></i>Items</button>
-              <button>
-                <i class="fa-solid fa-chart-simple"></i>Performance
+              <button class="btn d-flex align-items-center">
+                <i class="fa-solid fa-list"></i>
+                <span class="dashboard_SideBar_but">Summary</span>
+              </button>
+              <button class="btn d-flex align-items-center">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span class="dashboard_SideBar_but">Items</span>
+              </button>
+              <button class="btn d-flex align-items-center">
+                <i class="fa-solid fa-chart-simple"></i>
+                <span class="dashboard_SideBar_but">Performance</span>
               </button>
               <p class="dashboard_Divider">Support</p>
-              <button><i class="fa-solid fa-gear"></i>Settings</button>
-              <button><i class="fa-solid fa-circle-question"></i>Help</button>
+              <button class="btn d-flex align-items-center">
+                <i class="fa-solid fa-gear"></i>
+                <span class="dashboard_SideBar_but">Setting</span>
+              </button>
+              <button class="btn d-flex align-items-center">
+                <i class="fa-solid fa-circle-question"></i>
+                <span class="dashboard_SideBar_but">Help</span>
+              </button>
               <!-- SIDE BARS -->
             </div>
 
+            <!-- Main Content -->
             <div id="dashboard_MainContent">
               <!-- ITEM TABS -->
-
               <div id="dashboard_Items">
                 <div id="dashboard_Items_Header">
                   <div id="db_item">
@@ -350,51 +364,34 @@
                         <div class="itemTemplate">
                           <div class="itemTemplate_left">
                             <button class="iconButton">
-                              <i class="fa-solid fa-qrcode iconButton"></i>
+                              <i class="fa-solid fa-qrcode"></i>
                             </button>
-
-                            <p class="dashboard_Items_itemTitle">
-                              Pancit canton
-                              <br />
-                              <small class="dashboard_Items_Data date"
-                                >9/2/2024</small
-                              >
-                            </p>
+                            <div class="db_label">
+                              <h5 class="highlight">Banana</h5>
+                              <small class="light">9/3/2024</small>
+                            </div>
                           </div>
 
                           <div class="itemTemplate_right">
                             <div>
-                              <small class="light"> Serving </small>
-                              <br />
-
+                              <small class="light">Serving</small><br />
                               <p class="highlight">1 serving</p>
                             </div>
-
                             <div>
-                              <small class="light"> Calories </small>
-                              <br />
-
+                              <small class="light">Calories</small><br />
                               <p class="highlight">1000 Calories</p>
                             </div>
-
                             <div>
-                              <small class="light"> Weight </small>
-                              <br />
-
+                              <small class="light">Weight</small><br />
                               <p class="highlight">50g</p>
                             </div>
                             <div>
-                              <small class="light"> Food Group </small>
-                              <br />
-
+                              <small class="light">Food Group</small><br />
                               <p class="highlight">Fruits</p>
                             </div>
-
                             <button
                               class="iconButton"
                               type="button"
-                              class="btn"
-                              id="profileDropdown"
                               data-bs-toggle="dropdown"
                               aria-haspopup="true"
                               aria-expanded="false"
@@ -419,12 +416,68 @@
                           </div>
                         </div>
                       </tr>
-                      <tr></tr>
+
+                      <tr>
+                        <div class="itemTemplate">
+                          <div class="itemTemplate_left">
+                            <button class="iconButton">
+                              <i class="fa-solid fa-qrcode"></i>
+                            </button>
+                            <div class="db_label">
+                              <h5 class="highlight">Banana</h5>
+                              <small class="light">9/3/2024</small>
+                            </div>
+                          </div>
+
+                          <div class="itemTemplate_right">
+                            <div>
+                              <small class="light">Serving</small><br />
+                              <p class="highlight">1 serving</p>
+                            </div>
+                            <div>
+                              <small class="light">Calories</small><br />
+                              <p class="highlight">1000 Calories</p>
+                            </div>
+                            <div>
+                              <small class="light">Weight</small><br />
+                              <p class="highlight">50g</p>
+                            </div>
+                            <div>
+                              <small class="light">Food Group</small><br />
+                              <p class="highlight">Fruits</p>
+                            </div>
+                            <button
+                              class="iconButton"
+                              type="button"
+                              data-bs-toggle="dropdown"
+                              aria-haspopup="true"
+                              aria-expanded="false"
+                            >
+                              <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+
+                            <div class="dropdown-menu">
+                              <button
+                                class="btn btn-light dropdown-item"
+                                type="button"
+                              >
+                                <i class="fa-solid fa-pen-to-square"></i> | Edit
+                              </button>
+                              <button
+                                class="btn btn-light dropdown-item"
+                                type="button"
+                              >
+                                <i class="fa-solid fa-trash"></i> | Delete
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </tr>
+                      <!-- Repeat for other items -->
                     </tbody>
                   </table>
                 </div>
               </div>
-
               <!-- ITEM TABS -->
             </div>
           </div>
