@@ -1,0 +1,69 @@
+/* Div */
+#foodLabel {
+   border: 1px solid black;
+   padding: 10px; 
+   width: 400px;
+   max-width: 1000%;
+   margin-top: 50px;
+   margin-bottom: 50px;
+}
+/* Table */
+#ntrnTable {
+   table-layout: fixed;
+   white-space: nowrap;
+   min-width: 150px;
+ }
+/* Serving size */
+ #serving_size {
+   font-size: 20px;
+}
+/* Table title */
+#fctTitle {
+   font-weight: bold;
+}
+/* Daily value */
+#dailyVal {
+   text-align: right;
+   font-size: 13px;
+}
+/* Indented elements */
+#indentF {
+   padding-left: 20px;
+   font-weight: 400;
+}
+/* Element ID except those who are indented */
+#fctElmt {
+   font-weight: 500;
+}
+/* Row and border styles */
+#thick-row {
+   border-bottom: 3px solid black; 
+ }
+#thin-row {
+   border-bottom: 7px solid black;
+}
+ 
+#nobrdr th, #nobrdr td {
+   border: none;
+}
+/* Calories */
+#ntrnCal{
+   font-size: 20px;
+}
+
+#calories {
+   font-size: 20px;
+}
+/* Percentage value of the nutrition elements */
+#elmntPrcnt {
+   padding-right: 90px;
+}
+/* Table styles, adjustment of space between daily% and dosage */
+.table td:not(#elmntPrcnt) {
+   padding-left: 80px;
+}
+/* Explanation of daily value */
+#longP {
+   text-align: justify;
+   font-size: 12px;
+}
