@@ -340,6 +340,7 @@ section {
 .db_categ_but{
     display: flex;
     flex-direction: row;
+    border: none;
 }
 .db_categ_but:hover{
     background-color: transparent;
