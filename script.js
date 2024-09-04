@@ -53,7 +53,7 @@ function fetchUSDAData(query) {
  };
  
  // item 
- const query = "adobo ";
+ const query = "1 kg ground pork";
  
  // wait for both to complete fetching
  Promise.all([fetchUSDAData(query), fetchNutritionixData(query)])
