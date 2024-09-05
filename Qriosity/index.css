@@ -31,8 +31,9 @@ h5{
 .styled {
     font-family: "Merriweather", system-ui;
     color: white;
-    font-size: 25px;
+    font-size: 100%;
     font-weight: bold;
+
 }
 
 .light{
@@ -105,7 +106,14 @@ section {
     display: flex;
     gap: 10px;
 }
+/* MOBILE NAV */
 
+#offcanvasNavbar{
+width: 40%;
+height: 90vh;
+margin-top: 10vh;
+background-color: var(--contrast);
+}
 /* Navigation Links */
 .header .nav-link {
     color: var(--contrast);
@@ -268,7 +276,7 @@ section {
 #dashboard_SideBar{
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     background-color: #ffffff;
     width: 20%;
     height: 100%;
@@ -384,28 +392,33 @@ section {
 /* Responsive Styles */
 
 
-@media (min-width: 768px) and (max-width: 992px) {
+
+@media (max-width: 992px) {
+    /* LANDING */
     #tagline {
         display: none;
     }
+    #TopbarNav {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-    .dashboard_SideBar_but{
+    #mobileNavBar{
+        display: flex;
+        position: fixed;
+        right: 0;
+        z-index: 1056;
+        align-items:center;
+        justify-items: right;
+        height: 10vh;
+        margin-right: 10px;
+    }
+    .fa-bars{
+        color: var(--contrast);
+    }
+    #navHeader{
         display: none;
-        align-items: center;
-        justify-content: center;
-    }
-    #dashboard_SideBar button{
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .header {
-        padding: 10px 25px;
-    }
-    #dashboard_SideBar {
-        width: 25%;
-    }
-    #dashboard_MainContent {
-        width: 75%;
     }
 }

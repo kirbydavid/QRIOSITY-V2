@@ -44,7 +44,7 @@
         <!-- Navigation -->
         <nav id="navHeader">
           <a class="nav-link" href="#about">About</a>
-          <!-- <button
+          <button
             type="button"
             class="btn btn-light ms-3 hoverButton"
             data-bs-toggle="modal"
@@ -52,7 +52,7 @@
             id="signInButton"
           >
             Sign In
-          </button> -->
+          </button>
           <div class="dropdown">
             <button
               type="button"
@@ -86,6 +86,27 @@
           </div>
         </nav>
       </header>
+    </div>
+
+    <div id="mobileNavBar">
+      <button
+        class="btn d-flex align-items-center"
+        id="mobileNavBarMenu"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <button><i class="fa-solid fa-paperclip"></i> | Dashboard</button>
     </div>
     <!-- HEADER -->
 
