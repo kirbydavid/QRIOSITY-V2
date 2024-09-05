@@ -41,3 +41,36 @@ document.addEventListener("DOMContentLoaded", function () {
     this.classList.toggle("fa-eye-slash");
   });
 });
+
+// Get all the sidebar buttons
+const buttons = document.querySelectorAll("#dashboard_SideBar button");
+
+// Loop through each button and add a click event listener
+buttons.forEach((button) => {
+  button.addEventListener("click", function () {
+    // Remove 'active' class from all buttons
+    buttons.forEach((btn) => btn.classList.remove("active"));
+
+    // Add 'active' class to the clicked button
+    this.classList.add("active");
+
+    // Get the target section id from the data-target attribute of the button
+    const targetSection = this.getAttribute("data-target");
+
+    // Hide all sections by removing the 'active' class from them
+    document.querySelectorAll(".dashboard_Section").forEach((section) => {
+      section.classList.remove("active");
+    });
+
+    // Show the target section by adding the 'active' class
+    document.getElementById(targetSection).classList.add("active");
+  });
+});
+
+function deleteRow(button) {
+  const row = button.parentNode.parentNode.parentNode; // Get the row
+  row.parentNode.removeChild(row); // Remove the row from the table body
+
+  // Hide the table if there are no rows
+  checkTableVisibility();
+}

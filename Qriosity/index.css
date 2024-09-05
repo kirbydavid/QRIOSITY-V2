@@ -257,7 +257,20 @@ background-color: var(--contrast);
     justify-items: center;
 }
 
+/* DASHBOARD CONTROLLER */
+.dashboard_Section {
+    display: none; /* Hide all sections by default */
+}
+  
+.dashboard_Section.active {
+    display: block; /* Show only the active section */  
+}
 
+#dashboard_SideBar button.active {
+    background-color: #F2F3F5;
+    color: var(--theme); /* Replace with your actual theme color */
+    border-right: var(--theme) 3px solid;
+}
 /* Dashboard */
 
 #dashboardModalBox{
@@ -294,6 +307,7 @@ background-color: var(--contrast);
     font-weight: 400;
     gap: 30px;
     font-size: var(--smallSize);
+    border-radius: 0 !important;
 }
 #dashboard_SideBar button:hover{
     background-color: #F2F3F5;
@@ -325,8 +339,17 @@ background-color: var(--contrast);
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
 }
-
+#dashboard_Items_Categories_CreateItemTemplateButton{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    height: 7vh;
+    width: 7vh;
+    margin: 2vh 2vh;
+    border-radius: 100% !important;
+}
 #db_item{
     display: flex;
     flex-direction: row;
@@ -353,7 +376,7 @@ background-color: var(--contrast);
 .db_categ_but:hover{
     background-color: transparent;
     border: t;
-    border-bottom: var(--theme) 2px solid;
+    border-bottom: var(--theme) 3px solid;
     border-radius: 0px !important;
 }
 
@@ -385,6 +408,10 @@ background-color: var(--contrast);
 
 
 /* ITEMS TAB */
+
+
+
+
 
 /* MAIN CONTENT */
 

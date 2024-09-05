@@ -327,28 +327,42 @@
       <div class="modal-dialog modal-fullscreen" id="dashboardModalBox">
         <div class="modal-content">
           <div id="dashboard_Content">
-            <!-- Sidebar -->
             <div id="dashboard_SideBar">
               <!-- SIDE BARS -->
               <p class="dashboard_Divider">Dashboard</p>
-              <button class="btn d-flex align-items-center">
+              <button
+                class="btn d-flex align-items-center active"
+                data-target="dashboard_Summary"
+              >
                 <i class="fa-solid fa-list"></i>
                 <span class="dashboard_SideBar_but">Summary</span>
               </button>
-              <button class="btn d-flex align-items-center">
+              <button
+                class="btn d-flex align-items-center"
+                data-target="dashboard_Items"
+              >
                 <i class="fa-solid fa-paper-plane"></i>
                 <span class="dashboard_SideBar_but">Items</span>
               </button>
-              <button class="btn d-flex align-items-center">
+              <button
+                class="btn d-flex align-items-center"
+                data-target="dashboard_Performance"
+              >
                 <i class="fa-solid fa-chart-simple"></i>
                 <span class="dashboard_SideBar_but">Performance</span>
               </button>
               <p class="dashboard_Divider">Support</p>
-              <button class="btn d-flex align-items-center">
+              <button
+                class="btn d-flex align-items-center"
+                data-target="dashboard_Setting"
+              >
                 <i class="fa-solid fa-gear"></i>
                 <span class="dashboard_SideBar_but">Setting</span>
               </button>
-              <button class="btn d-flex align-items-center">
+              <button
+                class="btn d-flex align-items-center"
+                data-target="dashboard_Help"
+              >
                 <i class="fa-solid fa-circle-question"></i>
                 <span class="dashboard_SideBar_but">Help</span>
               </button>
@@ -357,8 +371,14 @@
 
             <!-- Main Content -->
             <div id="dashboard_MainContent">
+              <!-- SUMMARY -->
+              <div id="dashboard_Summary" class="dashboard_Section active">
+                <p>summary</p>
+              </div>
+              <!-- SUMMARY -->
+
               <!-- ITEM TABS -->
-              <div id="dashboard_Items">
+              <div id="dashboard_Items" class="dashboard_Section">
                 <div id="dashboard_Items_Header">
                   <div id="db_item">
                     <h5>0 Current Items</h5>
@@ -377,11 +397,16 @@
                     </button>
                   </div>
                 </div>
+                <button
+                  id="dashboard_Items_Categories_CreateItemTemplateButton"
+                >
+                  +
+                </button>
 
                 <div id="dashboard_Items_List">
                   <table class="table" id="ingredientsTable">
                     <tbody id="ingredientsList">
-                      <tr>
+                      <tr id="item_ID_1">
                         <div class="itemTemplate">
                           <div class="itemTemplate_left">
                             <button class="iconButton">
@@ -430,6 +455,7 @@
                               <button
                                 class="btn btn-light dropdown-item"
                                 type="button"
+                                onclick="deleteRow(this)"
                               >
                                 <i class="fa-solid fa-trash"></i> | Delete
                               </button>
@@ -438,7 +464,7 @@
                         </div>
                       </tr>
 
-                      <tr>
+                      <tr id="item_ID_1">
                         <div class="itemTemplate">
                           <div class="itemTemplate_left">
                             <button class="iconButton">
@@ -487,6 +513,7 @@
                               <button
                                 class="btn btn-light dropdown-item"
                                 type="button"
+                                onclick="deleteRow(this)"
                               >
                                 <i class="fa-solid fa-trash"></i> | Delete
                               </button>
@@ -500,6 +527,22 @@
                 </div>
               </div>
               <!-- ITEM TABS -->
+
+              <!-- PERFORMANCE -->
+              <div id="dashboard_Performance" class="dashboard_Section">
+                <p>Performance</p>
+              </div>
+              <!-- PERFORMANCE -->
+
+              <!-- SETTING -->
+              <div id="dashboard_Setting" class="dashboard_Section">
+                <p>Setting</p>
+              </div>
+              <!-- SETTING -->
+
+              <div id="dashboard_Help" class="dashboard_Section">
+                <p>Help</p>
+              </div>
             </div>
           </div>
         </div>
