@@ -1,5 +1,5 @@
 <?php
-  include('dbconnection.php'); // Adjust the path to your actual dbconnection file
+  include('dbconnection.php'); 
 
   if (isset($_POST['register'])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
