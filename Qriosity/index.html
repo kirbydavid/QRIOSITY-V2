@@ -288,7 +288,7 @@
                 </button>
               </div>
 
-              <small> or continue with</small>
+              <small class="centerSmall"> or continue with</small>
 
               <div class="social-icons">
                 <a href="#"><i class="fa-brands fa-facebook"></i></a>
@@ -297,7 +297,7 @@
               </div>
 
               <div class="alternative">
-                <small>
+                <small class="centerSmall">
                   Already a member?
                   <button
                     type="button"
@@ -526,11 +526,155 @@
                   </table>
                 </div>
               </div>
+
+              <div id=""></div>
               <!-- ITEM TABS -->
 
               <!-- PERFORMANCE -->
               <div id="dashboard_Performance" class="dashboard_Section">
-                <p>Performance</p>
+                <div id="dashboard_form">
+                  <form>
+                    <div class="mb-3">
+                      <label for="productName" class="form-label"
+                        >Product Name</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="productName"
+                        placeholder="Enter product name"
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="description" class="form-label"
+                        >Description</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="description"
+                        placeholder="Enter description"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="origin" class="form-label">Origin</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="origin"
+                        placeholder="Enter origin"
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="expirationDate" class="form-label"
+                        >Expiration Date</label
+                      >
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="expirationDate"
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="allergen" class="form-label">Allergen</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="allergen"
+                        placeholder="Enter allergens"
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="ingredients" class="form-label"
+                        >Ingredients</label
+                      >
+                      <button
+                        type="button"
+                        class="btn btn-primary ms-3"
+                        data-bs-toggle="modal"
+                        data-bs-target="#ingredientModal"
+                      >
+                        Add Ingredient
+                      </button>
+                    </div>
+
+                    <div class="container mt-5">
+                      <div class="table-wrapper">
+                        <table class="table mp5" id="ingredientsTable">
+                          <thead>
+                            <tr>
+                              <th></th>
+                              <th>Name</th>
+                              <th>Quantity</th>
+                              <th>Weight</th>
+                              <th>Unit</th>
+                              <th>Calories</th>
+                              <th>Food Group</th>
+                              <th></th>
+                            </tr>
+                          </thead>
+                          <tbody id="ingredientsList"></tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                    <!-- Yung popup chuchu -->
+                    <div
+                      class="modal fade"
+                      id="ingredientModal"
+                      tabindex="-1"
+                      aria-labelledby="ingredientModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="ingredientModalLabel">
+                              Add Ingredient
+                            </h5>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="mb-3">
+                              <label for="ingredientName" class="form-label"
+                                >Ingredient Name</label
+                              >
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="ingredientInputBox"
+                                placeholder="Enter ingredient name"
+                              />
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button>Close</button>
+                            <button>Add Ingredient</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Buttons gagi -->
+                    <div class="mt-4">
+                      <button type="button" class="btn btn-success me-2">
+                        Generate
+                      </button>
+                      <button type="submit" class="btn btn-primary">
+                        Save
+                      </button>
+                    </div>
+                  </form>
+                </div>
               </div>
               <!-- PERFORMANCE -->
 

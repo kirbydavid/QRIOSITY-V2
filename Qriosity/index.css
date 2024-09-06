@@ -409,8 +409,14 @@ background-color: var(--contrast);
 
 /* ITEMS TAB */
 
-
-
+#dashboard_form{
+    background-color: var(--contrast);
+    height: 85vh;
+    width: 100%;
+    border-radius: 10px;
+    border: var(--whiteHover) solid 1px;
+    padding: 20px 20px;
+}
 
 
 /* MAIN CONTENT */
