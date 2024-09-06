@@ -1,0 +1,61 @@
+/* index.css */
+
+/* Container to make table body scrollable */
+.table-wrapper {
+    max-height: 175px; /* Adjust height as needed */
+    overflow-y: auto; /* Enables vertical scrolling */
+    margin-top: -30px;
+  }
+  
+  .table thead th {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa; /* Background color to match your design */
+    z-index: 1; /* Ensures the header stays above the table body */
+  }
+  
+  /* Optional: Add border to sticky header */
+  .table thead th {
+    border-bottom: 2px solid #dee2e6; /* Adjust color if needed */
+  }
+  
+  /* Ensure the table is properly displayed */
+  .table {
+    margin-bottom: 0; /* Remove default margin to fit within container */
+  }
+  
+  /* Styling for the form card */
+  .form-card {
+    max-width: 800px;
+    margin: 0px auto;
+  
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  #ingredientsTable {
+    width: 100%; /* Full width of its container */
+    border-collapse: collapse; /* Optional: Collapses borders */
+  }
+  
+  /* Adjust font size and padding for better fit */
+  #ingredientsTable td,
+  #ingredientsTable th {
+    padding: 0.5rem; /* Adjust padding for smaller or larger spaces */
+    font-size: 0.875rem; /* Adjust font size if needed */
+  }
+  
+  /* Style the remove button to fit within the table */
+  .remove-btn {
+    background: none;
+    border: none;
+    color: #fa5252;
+    font-size: 1rem; /* Adjust font size for the button */
+    cursor: pointer;
+  }
+  
+  .remove-btn:hover {
+    color: darkred;
+  }
+  

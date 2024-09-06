@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Form</title>
+    <link rel="stylesheet" href="QRstyle.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- FONTAWESOME ICON KIT -->
+    <script
+      src="https://kit.fontawesome.com/8966b11bb7.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="card form-card">
+      <div class="card-body">
+        <div class="container mt-5">
+          <h2>Product Form</h2>
+          <form action="submit" id="productForm">
+            <div class="mb-3">
+              <label for="productName" class="form-label">Product Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="productName"
+                name="Product_Name"
+                placeholder="Enter product name"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="description" class="form-label" >Description</label>
+              <input
+                type="text"
+                class="form-control"
+                id="description"
+                name="Description"
+                placeholder="Enter description"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="origin" class="form-label" >Origin</label>
+              <input
+                type="text"
+                class="form-control"
+                id="origin"
+                name="Origin"
+                placeholder="Enter origin"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="expirationDate" class="form-label" 
+                >Expiration Date</label
+              >
+              <input type="date" class="form-control" id="expirationDate" name="Expiration_Date"/>
+            </div>
+
+            <div class="mb-3">
+              <label for="allergen" class="form-label" >Allergen</label>
+              <input
+                type="text"
+                class="form-control"
+                id="allergen"
+                name="Allergen"
+                placeholder="Enter allergens"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="ingredients" class="form-label">Ingredients</label>
+              <button
+                type="button"
+                class="btn btn-primary ms-3"
+                data-bs-toggle="modal"
+                data-bs-target="#ingredientModal"
+              >
+                Add Ingredient
+              </button>
+            </div>
+            <input type="hidden" id="ingredients" name="ingredients" />
+            <div class="container mt-5">
+              <div class="table-wrapper">
+                <table class="table mp5" id="ingredientsTable">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Name</th>
+                      <th>Quantity</th>
+                      <th>Weight</th>
+                      <th>Unit</th>
+                      <th>Calories</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="ingredientsList"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Yung popup chuchu -->
+            <div
+              class="modal fade"
+              id="ingredientModal"
+              tabindex="-1"
+              aria-labelledby="ingredientModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="ingredientModalLabel">
+                      Add Ingredient
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="mb-3">
+                      <label for="ingredientName" class="form-label"
+                        >Ingredient Name</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="ingredientInputBox"
+                        placeholder="Enter ingredient name"
+                      />
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      data-bs-dismiss="modal"
+                      onclick="addIngredient()"
+                    >
+                      Add Ingredient
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="mt-4">
+              <button type="button" class="btn btn-success me-2">
+                Generate
+              </button>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="QR.js"></script>
+  </body>
+</html>
