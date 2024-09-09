@@ -1,47 +1,53 @@
 // Update the form submission event handler to handle the ingredients table data
-const form =document.getElementById('productForm'); // Get the form element
+const form = document.getElementById('productForm'); // Get the form element
 form.addEventListener('submit', (event) => {
-    event.preventDefault();
-  
-    // Gather the ingredients table data
-    const ingredientsTable = document.getElementById('ingredientsTable');
-    const ingredients = [];
-    const rows = ingredientsTable.rows;
-    for (let i = 1; i < rows.length; i++) {
-      const row = rows[i];
-      const ingredient = {
-        name: row.cells[1].textContent,
-        quantity: row.cells[2].textContent,
-        weight: row.cells[3].textContent,
-        unit: row.cells[4].textContent,
-        calories: row.cells[5].textContent,
-      };
-      ingredients.push(ingredient);
-    }
-  
-    // Update the hidden input field with the ingredients table data
-    const ingredientsInput = document.getElementById('ingredients');
-    ingredientsInput.value = JSON.stringify(ingredients);
-  
-    // Gather the form data
-    const formData = new FormData(form);
-  
-    // Send the form data to the server
-    fetch('productForm', {
-      method: 'POST',
-      body: formData,
+  event.preventDefault();
+
+  // Gather the ingredients table data
+  const ingredientsTable = document.getElementById('ingredientsTable');
+  const ingredients = [];
+  const rows = ingredientsTable.rows;
+  for (let i = 1; i < rows.length; i++) {
+    const row = rows[i];
+    const ingredient = {
+      name: row.cells[1].textContent,
+      quantity: row.cells[2].textContent,
+      weight: row.cells[3].textContent,
+      unit: row.cells[4].textContent,
+      calories: row.cells[5].textContent,
+    };
+    ingredients.push(ingredient);
+  }
+
+  // Gather the form data
+  const formData = new FormData(form);
+
+  // Create a JSON object to store the form data
+  const jsonData = {
+    Product_Name: formData.get('Product_Name'),
+    Description: formData.get('Description'),
+    Origin: formData.get('Origin'),
+    Expiration_Date: formData.get('Expiration_Date'),
+    Allergen: formData.get('Allergen'),
+    ingredients: ingredients,
+  };
+
+  // Send the JSON object to the server-side endpoint
+  fetch('http://localhost:3000/save-data', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(jsonData),
+    mode: 'cors',
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
     })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          // Display success message and/or update the dashboard
-        } else {
-          // Display error message
-        }
-      })
-      .catch((error) => {
-        // Display error message
-      });
+    .catch((error) => {
+      console.error('Error:', error);
+    });
 
   // Clear the input fields
   Array.from(form.elements).forEach((input) => {
