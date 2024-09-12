@@ -1,7 +1,7 @@
 <?php
-  include('dbconnection.php'); 
+include('dbconnection.php'); // Adjust the path to your actual dbconnection file
 
-  if (isset($_POST['register'])) {
+if (isset($_POST['email']) && isset($_POST['password'])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
@@ -16,19 +16,17 @@
         $query = "INSERT INTO users (email, password, username) VALUES ('$email', '$password', '')";
 
         if (mysqli_query($conn, $query)) {
-            echo "Registration successful. Please complete your profile.";
-            // Redirect to profile completion page
-            header("Location: complete_profile.php?email=$email");
+            echo "Registration successful.";
         } else {
             echo "Registration unsuccessful: " . mysqli_error($conn);
         }
     }
-  }
 
-  // Closing the connection
-  mysqli_close($conn);
+    // Closing the connection
+    mysqli_close($conn);
+    exit(); // Ensure no further code is executed
+}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,6 +34,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QRIOSITY | A Fitness WebApp</title>
+
+    <!-- AJAX Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Bootstrap CSS -->
     <link
@@ -239,7 +240,7 @@
               aria-label="Close"
             ></button>
           </div>
-          <form method="post">
+          <form id="registerForm" method="post">
             <div class="modal-body">
               <div class="mb-3">
                 <label for="EmailAuth" class="form-label">Email</label>
@@ -248,7 +249,7 @@
                   class="form-control"
                   id="EmailAuth"
                   name="email"
-                  placeholder="name@example.com"
+                  placeholder="name@example.com" required
                 />
               </div>
 
@@ -259,7 +260,7 @@
                   class="form-control"
                   id="PasswordAuth2"
                   name="password"
-                  placeholder="Enter Password"
+                  placeholder="Enter Password" required
                 />
                 <i
                   class="fas fa-eye-slash toggle-password"
@@ -271,14 +272,14 @@
                   type="password"
                   class="form-control"
                   id="PasswordAuth3"
-                  placeholder="Enter Password Again"
+                  placeholder="Enter Password Again" required
                 />
                 <i
                   class="fas fa-eye-slash toggle-password"
                   id="togglePassword3"
                 ></i>
               </div>
-
+              <div id="error-message"></div>
               <div class="form-check">
                 <input
                   type="checkbox"
@@ -294,15 +295,13 @@
                 <button
                   type="submit"
                   class="btn btn-secondary"
-                  data-bs-dismiss="modal"
                   id="signInSwitch"
-                  name="register"
                 >
                   Register
                 </button>
               </div>
 
-              <small> or continue with</small>
+              <small class="centerSmall"> or continue with</small>
 
               <div class="social-icons">
                 <a href="#"><i class="fa-brands fa-facebook"></i></a>
@@ -311,7 +310,7 @@
               </div>
 
               <div class="alternative">
-                <small>
+                <small class="centerSmall">
                   Already a member?
                   <button
                     type="button"
@@ -329,6 +328,28 @@
         </div>
       </div>
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#registerForm').on('submit', function(event) {
+                event.preventDefault(); // Prevent the form from submitting the traditional way
+                $.ajax({
+                    url: 'index.php',
+                    method: 'POST',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        if (response.includes('Email already exists')) {
+                            $('#error-message').html('<p style="color:red;">Email already exists.</p>');
+                        } else if (response.includes('Registration successful')) {
+                            window.location.href = 'complete_profile.php?email=' + $('#EmailAuth').val(); // Redirect to profile completion page
+                        } else {
+                            $('#error-message').html('<p style="color:red;">' + response + '</p>');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
     <!-- SIGN IN / SIGN UP FORM -->
 
     <!-- DASHBOARD -->
